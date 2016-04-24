@@ -1,8 +1,8 @@
 package com.dodevjutsu.kata.marsrover;
 
 public class Rover {
-    private final int x;
-    private final int y;
+    private int x;
+    private int y;
     private Direction direction;
 
     public Rover(int x, int y, String direction) {
@@ -16,6 +16,8 @@ public class Rover {
             this.direction = direction.rotateLeft();
         } else if (sequence.equals("r")) {
             this.direction = direction.rotateRight();
+        } else if (sequence.equals("f")) {
+            this.y += 1;
         }
     }
 
