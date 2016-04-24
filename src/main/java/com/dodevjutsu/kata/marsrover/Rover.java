@@ -17,16 +17,12 @@ public class Rover {
         } else if (sequence.equals("f")) {
             if (this.direction.equals(Direction.facing("N"))) {
                 this.point = this.direction.moveForward(this.point, 1);
-                this.point = this.point.incrementY(1);
             } else if (this.direction.equals(Direction.facing("W"))) {
                 this.point = this.direction.moveForward(this.point, -1);
-                this.point = this.point.incrementX(-1);
             } else if (this.direction.equals(Direction.facing("S"))) {
                 this.point = this.direction.moveForward(this.point, -1);
-                this.point = this.point.incrementY(-1);
             } else {
                 this.point = this.direction.moveForward(this.point, 1);
-                this.point = this.point.incrementX(1);
             }
         } else if (sequence.equals("b")) {
             if (this.direction.equals(Direction.facing("N"))) {
