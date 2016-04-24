@@ -9,27 +9,11 @@ public class Direction {
     }
 
     public Direction rotateLeft() {
-        if (representation.equals("N")) {
-            throw new RuntimeException();
-        } else if (representation.equals("W")) {
-            throw new RuntimeException();
-        } else if (representation.equals("S")) {
-            throw new RuntimeException();
-        } else  {
-            return Direction.facing("N");
-        }
+        throw new RuntimeException();
     }
 
     public Direction rotateRight() {
-        if (representation.equals("N")) {
-            throw new RuntimeException();
-        } else if (representation.equals("W")) {
-            throw new RuntimeException();
-        } else if (representation.equals("S")) {
-            throw new RuntimeException();
-        } else {
-            return Direction.facing("S");
-        }
+        throw new RuntimeException();
     }
 
     public static Direction facing(String representation) {
@@ -41,7 +25,7 @@ public class Direction {
             return new South();
         }
 
-        return new Direction(representation);
+        return new East();
     }
 
     @Override
