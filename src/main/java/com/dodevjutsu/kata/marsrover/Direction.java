@@ -25,4 +25,9 @@ public abstract class Direction {
 
         return true;
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getName();
+    }
 }
