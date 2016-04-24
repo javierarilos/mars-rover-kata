@@ -50,6 +50,15 @@ public class RoverTest {
         assertEquals(getRoverFacing('N'), rover);
     }
 
+    @Test
+    public void rotateRightWhenFacingNorth() {
+        Rover rover = getRoverFacing('N');
+
+        rover.receive("r");
+
+        assertEquals(getRoverFacing('E'), rover);
+    }
+
     private Rover getRoverFacing(char direction) {
         return new Rover(0, 0, direction);
     }
