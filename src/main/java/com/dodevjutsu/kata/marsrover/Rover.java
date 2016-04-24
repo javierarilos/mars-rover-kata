@@ -20,6 +20,8 @@ public class Rover {
                 this.direction = 'S';
             } else if (this.direction == 'S') {
                 this.direction = 'E';
+            } else if (this.direction == 'E') {
+                this.direction = 'N';
             }
         }
     }
