@@ -2,16 +2,16 @@ package com.dodevjutsu.kata.marsrover;
 
 public class Direction {
 
-    private final char representation;
+    private final String representation;
 
-    private Direction(char representation) {
+    private Direction(String representation) {
         this.representation = representation;
     }
 
     public void rotateLeft() {
     }
 
-    public static Direction facing(char representation) {
+    public static Direction facing(String representation) {
         return new Direction(representation);
     }
 
@@ -22,13 +22,13 @@ public class Direction {
 
         Direction direction = (Direction) o;
 
-        return representation == direction.representation;
+        return representation != null ? representation.equals(direction.representation) : direction.representation == null;
 
     }
 
     @Override
     public int hashCode() {
-        return (int) representation;
+        return representation != null ? representation.hashCode() : 0;
     }
 
     @Override

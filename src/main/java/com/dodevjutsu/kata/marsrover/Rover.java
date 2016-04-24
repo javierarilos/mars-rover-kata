@@ -5,7 +5,7 @@ public class Rover {
     private final int y;
     private Direction direction;
 
-    public Rover(int x, int y, char direction) {
+    public Rover(int x, int y, String direction) {
         this.x = x;
         this.y = y;
         this.direction = Direction.facing(direction);
@@ -15,24 +15,24 @@ public class Rover {
         // smell: switch statement
         if (sequence.equals("l")) {
             direction.rotateLeft();
-            if (direction.equals(Direction.facing('N'))) {
-                this.direction = Direction.facing('W');
-            } else if (direction.equals(Direction.facing('W'))) {
-                this.direction = Direction.facing('S');
-            } else if (direction.equals(Direction.facing('S'))) {
-                this.direction = Direction.facing('E');
-            } else if (direction.equals(Direction.facing('E'))) {
-                this.direction = Direction.facing('N');
+            if (direction.equals(Direction.facing("N"))) {
+                this.direction = Direction.facing("W");
+            } else if (direction.equals(Direction.facing("W"))) {
+                this.direction = Direction.facing("S");
+            } else if (direction.equals(Direction.facing("S"))) {
+                this.direction = Direction.facing("E");
+            } else if (direction.equals(Direction.facing("E"))) {
+                this.direction = Direction.facing("N");
             }
         } else if (sequence.equals("r")) {
-            if (direction.equals(Direction.facing('N'))) {
-                this.direction = Direction.facing('E');
-            } else if (direction.equals(Direction.facing('W'))) {
-                this.direction = Direction.facing('N');
-            } else if (direction.equals(Direction.facing('S'))) {
-                this.direction = Direction.facing('W');
-            } else if (direction.equals(Direction.facing('E'))) {
-                this.direction = Direction.facing('S');
+            if (direction.equals(Direction.facing("N"))) {
+                this.direction = Direction.facing("E");
+            } else if (direction.equals(Direction.facing("W"))) {
+                this.direction = Direction.facing("N");
+            } else if (direction.equals(Direction.facing("S"))) {
+                this.direction = Direction.facing("W");
+            } else if (direction.equals(Direction.facing("E"))) {
+                this.direction = Direction.facing("S");
             }
         }
     }
