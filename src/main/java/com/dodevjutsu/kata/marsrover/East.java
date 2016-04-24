@@ -9,4 +9,9 @@ public class East extends Direction {
     public Direction rotateLeft() {
         return Direction.facing("N");
     }
+
+    @Override
+    public Point moveForward(Point point, int movement) {
+        return point;
+    }
 }

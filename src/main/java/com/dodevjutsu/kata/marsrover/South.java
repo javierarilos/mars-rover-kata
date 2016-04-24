@@ -9,4 +9,9 @@ public class South extends Direction {
     public Direction rotateLeft() {
         return Direction.facing("E");
     }
+
+    @Override
+    public Point moveForward(Point point, int movement) {
+        return point;
+    }
 }
