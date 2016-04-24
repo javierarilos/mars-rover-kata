@@ -21,7 +21,15 @@ public class Direction {
     }
 
     public Direction rotateRight() {
-        return null;
+        if (representation.equals("N")) {
+            return Direction.facing("E");
+        } else if (representation.equals("W")) {
+            return Direction.facing("N");
+        } else if (representation.equals("S")) {
+            return Direction.facing("W");
+        } else {
+            return Direction.facing("S");
+        }
     }
 
     public static Direction facing(String representation) {
