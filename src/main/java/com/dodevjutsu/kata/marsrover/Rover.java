@@ -3,7 +3,6 @@ package com.dodevjutsu.kata.marsrover;
 public class Rover {
     private final int x;
     private final int y;
-    private char direction;
     private Direction typedDirection;
 
     public Rover(int x, int y, char direction) {
@@ -72,7 +71,6 @@ public class Rover {
     }
 
     private void setDirection(char direction) {
-        this.direction = direction;
         this.typedDirection = Direction.facing(direction);
     }
 }
