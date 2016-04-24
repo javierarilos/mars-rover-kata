@@ -21,6 +21,8 @@ public class Rover {
                 this.y += 1;
             } else if (this.direction.equals(Direction.facing("W"))) {
                 this.x -= 1;
+            } else if (this.direction.equals(Direction.facing("S"))) {
+                this.y -= 1;
             }
         }
     }
