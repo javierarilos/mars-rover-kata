@@ -17,6 +17,6 @@ public class North extends Direction {
 
     @Override
     public Point moveBackwards(Point point) {
-        return point;
+        return point.incrementY(-1);
     }
 }
