@@ -20,10 +20,12 @@ public class Rover {
             this.direction = direction.rotateRight();
         } else if (sequence.equals("f")) {
             if (this.direction.equals(Direction.facing("N"))) {
+                this.point = this.point.incrementY(1);
                 this.y += 1;
             } else if (this.direction.equals(Direction.facing("W"))) {
                 this.x -= 1;
             } else if (this.direction.equals(Direction.facing("S"))) {
+                this.point = this.point.incrementY(-1);
                 this.y -= 1;
             } else {
                 this.x += 1;

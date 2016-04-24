@@ -8,4 +8,8 @@ public class Point {
         this.x = x;
         this.y = y;
     }
+
+    public Point incrementY(int i) {
+        return new Point(x, y + i);
+    }
 }
