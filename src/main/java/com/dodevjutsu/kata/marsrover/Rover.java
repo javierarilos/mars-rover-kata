@@ -8,30 +8,30 @@ public class Rover {
     public Rover(int x, int y, char direction) {
         this.x = x;
         this.y = y;
-        this.setDirection(direction);
+        this.direction = Direction.facing(direction);
     }
 
     public void receive(String sequence) {
         // smell: switch statement
         if (sequence.equals("l")) {
-            if (this.getDirection().equals(Direction.facing('N'))) {
-                this.setDirection('W');
-            } else if (this.getDirection().equals(Direction.facing('W'))) {
-                this.setDirection('S');
-            } else if (this.getDirection().equals(Direction.facing('S'))) {
-                this.setDirection('E');
-            } else if (this.getDirection().equals(Direction.facing('E'))) {
-                this.setDirection('N');
+            if (direction.equals(Direction.facing('N'))) {
+                this.direction = Direction.facing('W');
+            } else if (direction.equals(Direction.facing('W'))) {
+                this.direction = Direction.facing('S');
+            } else if (direction.equals(Direction.facing('S'))) {
+                this.direction = Direction.facing('E');
+            } else if (direction.equals(Direction.facing('E'))) {
+                this.direction = Direction.facing('N');
             }
         } else if (sequence.equals("r")) {
-            if (this.getDirection().equals(Direction.facing('N'))) {
-                this.setDirection('E');
-            } else if (this.getDirection().equals(Direction.facing('W'))) {
-                this.setDirection('N');
-            } else if (this.getDirection().equals(Direction.facing('S'))) {
-                this.setDirection('W');
-            } else if (this.getDirection().equals(Direction.facing('E'))) {
-                this.setDirection('S');
+            if (direction.equals(Direction.facing('N'))) {
+                this.direction = Direction.facing('E');
+            } else if (direction.equals(Direction.facing('W'))) {
+                this.direction = Direction.facing('N');
+            } else if (direction.equals(Direction.facing('S'))) {
+                this.direction = Direction.facing('W');
+            } else if (direction.equals(Direction.facing('E'))) {
+                this.direction = Direction.facing('S');
             }
         }
     }
@@ -45,7 +45,7 @@ public class Rover {
 
         if (x != rover.x) return false;
         if (y != rover.y) return false;
-        return getDirection().equals(rover.getDirection());
+        return direction.equals(rover.direction);
 
     }
 
@@ -62,15 +62,7 @@ public class Rover {
         return "Rover{" +
                 "x=" + x +
                 ", y=" + y +
-                ", direction=" + getDirection() +
+                ", direction=" + direction +
                 '}';
-    }
-
-    private Direction getDirection() {
-        return direction;
-    }
-
-    private void setDirection(char direction) {
-        this.direction = Direction.facing(direction);
     }
 }
