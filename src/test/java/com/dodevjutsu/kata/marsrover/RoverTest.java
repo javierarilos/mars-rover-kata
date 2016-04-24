@@ -15,7 +15,7 @@ public class RoverTest {
     }
 
     @Test
-    public void rotateLeftCommandWhenFacingNorth() {
+    public void rotateLeftWhenFacingNorth() {
         Rover rover = getRoverFacing('N');
 
         rover.receive("l");
