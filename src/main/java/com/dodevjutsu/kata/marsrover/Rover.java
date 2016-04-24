@@ -26,6 +26,12 @@ public class Rover {
         } else if (sequence.equals("r")) {
             if (this.direction == 'N') {
                 this.direction = 'E';
+            } else if (this.direction == 'W') {
+                this.direction = 'N';
+            } else if (this.direction == 'S') {
+                this.direction = 'W';
+            } else if (this.direction == 'E') {
+                this.direction = 'S';
             }
         }
     }
