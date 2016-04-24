@@ -13,7 +13,11 @@ public class Rover {
 
     public void receive(String sequence) {
         if (sequence.equals("l")) {
-            this.direction = 'W';
+            if (this.direction == 'N') {
+                this.direction = 'W';
+            } else if (this.direction == 'W') {
+                this.direction = 'S';
+            }
         }
     }
 
