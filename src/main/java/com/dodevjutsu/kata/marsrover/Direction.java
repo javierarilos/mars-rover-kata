@@ -6,7 +6,7 @@ public abstract class Direction {
 
     public abstract Direction rotateRight();
 
-    public abstract Point moveForward(Point point, int movement);
+    public abstract Point moveForward(Point point);
 
     public static Direction facing(String representation) {
         if (representation.equals("N")) {

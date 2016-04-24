@@ -11,7 +11,7 @@ public class North extends Direction {
     }
 
     @Override
-    public Point moveForward(Point point, int movement) {
-        return point.incrementY(movement);
+    public Point moveForward(Point point) {
+        return point.incrementY(1);
     }
 }
