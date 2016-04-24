@@ -1,14 +1,10 @@
 package com.dodevjutsu.kata.marsrover;
 
 public class Rover {
-    private int x;
-    private int y;
     private Direction direction;
     private Point point;
 
     public Rover(int x, int y, String direction) {
-        this.x = x;
-        this.y = y;
         this.point = new Point(x, y);
         this.direction = Direction.facing(direction);
     }
