@@ -13,4 +13,13 @@ public class RoverTest {
 
         assertEquals(new Rover(0, 0, 'N'), rover);
     }
+
+    @Test
+    public void rotateLeftCommand() {
+        Rover rover = new Rover(0, 0, 'N');
+
+        rover.receive("l");
+
+        assertEquals(new Rover(0, 0, 'W'), rover);
+    }
 }
