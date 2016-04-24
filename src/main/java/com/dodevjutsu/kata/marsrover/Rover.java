@@ -16,16 +16,7 @@ public class Rover {
         if (sequence.equals("l")) {
             this.direction = direction.rotateLeft();
         } else if (sequence.equals("r")) {
-            direction.rotateRight();
-            if (direction.equals(Direction.facing("N"))) {
-                this.direction = Direction.facing("E");
-            } else if (direction.equals(Direction.facing("W"))) {
-                this.direction = Direction.facing("N");
-            } else if (direction.equals(Direction.facing("S"))) {
-                this.direction = Direction.facing("W");
-            } else if (direction.equals(Direction.facing("E"))) {
-                this.direction = Direction.facing("S");
-            }
+            this.direction = direction.rotateRight();
         }
     }
 
