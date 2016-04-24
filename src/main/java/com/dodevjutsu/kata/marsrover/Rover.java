@@ -23,6 +23,8 @@ public class Rover {
                 this.x -= 1;
             } else if (this.direction.equals(Direction.facing("S"))) {
                 this.y -= 1;
+            } else {
+                this.x += 1;
             }
         }
     }
