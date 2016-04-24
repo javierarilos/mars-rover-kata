@@ -2,9 +2,6 @@ package com.dodevjutsu.kata.marsrover;
 
 public abstract class Direction {
 
-    protected Direction(String representation) {
-    }
-
     public abstract Direction rotateLeft();
 
     public abstract Direction rotateRight();
