@@ -8,7 +8,16 @@ public class Direction {
         this.representation = representation;
     }
 
-    public void rotateLeft() {
+    public Direction rotateLeft() {
+        if (representation.equals("N")) {
+            return Direction.facing("W");
+        } else if (representation.equals("W")) {
+            return Direction.facing("S");
+        } else if (representation.equals("S")) {
+            return Direction.facing("E");
+        } else  {
+            return Direction.facing("N");
+        }
     }
 
     public static Direction facing(String representation) {
