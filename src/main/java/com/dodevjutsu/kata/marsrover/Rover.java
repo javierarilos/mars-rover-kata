@@ -3,7 +3,7 @@ package com.dodevjutsu.kata.marsrover;
 public class Rover {
     private final int x;
     private final int y;
-    private Direction typedDirection;
+    private Direction direction;
 
     public Rover(int x, int y, char direction) {
         this.x = x;
@@ -53,7 +53,7 @@ public class Rover {
     public int hashCode() {
         int result = x;
         result = 31 * result + y;
-        result = 31 * result + (typedDirection != null ? typedDirection.hashCode() : 0);
+        result = 31 * result + (direction != null ? direction.hashCode() : 0);
         return result;
     }
 
@@ -67,10 +67,10 @@ public class Rover {
     }
 
     private Direction getDirection() {
-        return typedDirection;
+        return direction;
     }
 
     private void setDirection(char direction) {
-        this.typedDirection = Direction.facing(direction);
+        this.direction = Direction.facing(direction);
     }
 }
