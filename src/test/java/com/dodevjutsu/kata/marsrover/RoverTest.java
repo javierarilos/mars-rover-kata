@@ -86,7 +86,20 @@ public class RoverTest {
         assertEquals(getRoverFacing("N"), rover);
     }
 
+    @Test
+    public void moveForward() {
+        Rover rover = landRoverFacing("N", 0, 0);
+
+        rover.receive("f");
+
+        assertEquals(landRoverFacing("N", 0, 1), rover);
+    }
+
     private Rover getRoverFacing(String direction) {
-        return new Rover(0, 0, direction);
+        return landRoverFacing(direction, 0, 0);
+    }
+
+    private Rover landRoverFacing(String direction, int x, int y) {
+        return new Rover(x, y, direction);
     }
 }
