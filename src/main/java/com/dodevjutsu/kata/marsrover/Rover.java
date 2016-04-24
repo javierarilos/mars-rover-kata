@@ -4,6 +4,7 @@ public class Rover {
     private final int x;
     private final int y;
     private char direction;
+    private Direction typedDirection;
 
     public Rover(int x, int y, char direction) {
         this.x = x;
@@ -72,5 +73,6 @@ public class Rover {
 
     private void setDirection(char direction) {
         this.direction = direction;
+        this.typedDirection = new Direction(direction);
     }
 }
