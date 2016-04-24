@@ -1,13 +1,18 @@
 package com.dodevjutsu.kata.marsrover;
 
-public class Command {
-    private String value;
+public abstract class Command {
 
-    private Command(String value) {
-        this.value = value;
-    }
+    public abstract Vector execute(Vector vector);
 
     public static Command create(String value) {
-        return new Command(value);
+        if (value.equals("l")) {
+            return new RotateLeft();
+        } else if (value.equals("r")) {
+            return new RotateRight();
+        } else if (value.equals("f")) {
+            return new MoveForward();
+        } else {
+            return new MoveBackwards();
+        }
     }
 }
