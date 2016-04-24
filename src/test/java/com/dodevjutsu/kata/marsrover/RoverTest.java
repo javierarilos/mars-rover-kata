@@ -7,28 +7,32 @@ import static org.junit.Assert.assertEquals;
 public class RoverTest {
     @Test
     public void receiveEmptySequence() {
-        Rover rover = new Rover(0, 0, 'N');
+        Rover rover = getRoverFacing('N');
 
         rover.receive("");
 
-        assertEquals(new Rover(0, 0, 'N'), rover);
+        assertEquals(getRoverFacing('N'), rover);
     }
 
     @Test
     public void rotateLeftCommandWhenFacingNorth() {
-        Rover rover = new Rover(0, 0, 'N');
+        Rover rover = getRoverFacing('N');
 
         rover.receive("l");
 
-        assertEquals(new Rover(0, 0, 'W'), rover);
+        assertEquals(getRoverFacing('W'), rover);
     }
 
     @Test
     public void rotateLeftWhenFacingWest() {
-        Rover rover = new Rover(0, 0, 'W');
+        Rover rover = getRoverFacing('W');
 
         rover.receive("l");
 
-        assertEquals(new Rover(0, 0, 'S'), rover);
+        assertEquals(getRoverFacing('S'), rover);
+    }
+
+    private Rover getRoverFacing(char direction) {
+        return new Rover(0, 0, direction);
     }
 }
