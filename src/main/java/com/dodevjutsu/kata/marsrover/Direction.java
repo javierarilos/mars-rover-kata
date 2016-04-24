@@ -4,13 +4,13 @@ public class Direction {
 
     private final String representation;
 
-    private Direction(String representation) {
+    protected Direction(String representation) {
         this.representation = representation;
     }
 
     public Direction rotateLeft() {
         if (representation.equals("N")) {
-            return Direction.facing("W");
+            throw new RuntimeException();
         } else if (representation.equals("W")) {
             return Direction.facing("S");
         } else if (representation.equals("S")) {
@@ -22,7 +22,7 @@ public class Direction {
 
     public Direction rotateRight() {
         if (representation.equals("N")) {
-            return Direction.facing("E");
+            throw new RuntimeException();
         } else if (representation.equals("W")) {
             return Direction.facing("N");
         } else if (representation.equals("S")) {
@@ -33,6 +33,10 @@ public class Direction {
     }
 
     public static Direction facing(String representation) {
+        if (representation.equals("N")) {
+            return new North();
+        }
+
         return new Direction(representation);
     }
 
