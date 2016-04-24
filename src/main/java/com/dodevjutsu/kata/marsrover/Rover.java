@@ -23,11 +23,13 @@ public class Rover {
                 this.point = this.point.incrementY(1);
                 this.y += 1;
             } else if (this.direction.equals(Direction.facing("W"))) {
+                this.point = this.point.incrementX(-1);
                 this.x -= 1;
             } else if (this.direction.equals(Direction.facing("S"))) {
                 this.point = this.point.incrementY(-1);
                 this.y -= 1;
             } else {
+                this.point = this.point.incrementX(1);
                 this.x += 1;
             }
         }

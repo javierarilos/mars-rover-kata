@@ -12,4 +12,8 @@ public class Point {
     public Point incrementY(int i) {
         return new Point(x, y + i);
     }
+
+    public Point incrementX(int i) {
+        return new Point(x + i, y);
+    }
 }
