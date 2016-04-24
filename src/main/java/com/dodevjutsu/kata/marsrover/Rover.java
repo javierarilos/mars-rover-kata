@@ -1,12 +1,14 @@
 package com.dodevjutsu.kata.marsrover;
 
 public class Rover {
+    private Vector vector;
     private Direction direction;
     private Point point;
 
     public Rover(int x, int y, String direction) {
         this.point = new Point(x, y);
         this.direction = Direction.facing(direction);
+        this.vector = new Vector(this.point, this.direction);
     }
 
     public void receive(String sequence) {
@@ -22,12 +24,16 @@ public class Rover {
 
     private void execute(String command) {
         if (command.equals("l")) {
+            this.vector = vector.rotateLeft();
             this.direction = direction.rotateLeft();
         } else if (command.equals("r")) {
+            this.vector = vector.rotateRight();
             this.direction = direction.rotateRight();
         } else if (command.equals("f")) {
+            this.vector = vector.moveForward();
             this.point = this.direction.moveForward(this.point);
         } else if (command.equals("b")) {
+            this.vector = vector.moveBackwards();
             this.point = this.direction.moveBackwards(this.point);
         }
     }
