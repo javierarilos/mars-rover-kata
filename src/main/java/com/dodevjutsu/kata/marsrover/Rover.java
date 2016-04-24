@@ -73,6 +73,6 @@ public class Rover {
 
     private void setDirection(char direction) {
         this.direction = direction;
-        this.typedDirection = new Direction(direction);
+        this.typedDirection = Direction.facing(direction);
     }
 }
