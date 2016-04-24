@@ -21,16 +21,12 @@ public class Rover {
         } else if (sequence.equals("f")) {
             if (this.direction.equals(Direction.facing("N"))) {
                 this.point = this.point.incrementY(1);
-                this.y += 1;
             } else if (this.direction.equals(Direction.facing("W"))) {
                 this.point = this.point.incrementX(-1);
-                this.x -= 1;
             } else if (this.direction.equals(Direction.facing("S"))) {
                 this.point = this.point.incrementY(-1);
-                this.y -= 1;
             } else {
                 this.point = this.point.incrementX(1);
-                this.x += 1;
             }
         }
     }
@@ -42,26 +38,23 @@ public class Rover {
 
         Rover rover = (Rover) o;
 
-        if (x != rover.x) return false;
-        if (y != rover.y) return false;
-        return direction.equals(rover.direction);
+        if (direction != null ? !direction.equals(rover.direction) : rover.direction != null) return false;
+        return point != null ? point.equals(rover.point) : rover.point == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
-        result = 31 * result + (direction != null ? direction.hashCode() : 0);
+        int result = direction != null ? direction.hashCode() : 0;
+        result = 31 * result + (point != null ? point.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "Rover{" +
-                "x=" + x +
-                ", y=" + y +
-                ", direction=" + direction +
+                "direction=" + direction +
+                ", point=" + point +
                 '}';
     }
 }
