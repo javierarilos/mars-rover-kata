@@ -45,23 +45,19 @@ public class Rover {
 
         Rover rover = (Rover) o;
 
-        if (direction != null ? !direction.equals(rover.direction) : rover.direction != null) return false;
-        return point != null ? point.equals(rover.point) : rover.point == null;
+        return vector != null ? vector.equals(rover.vector) : rover.vector == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = direction != null ? direction.hashCode() : 0;
-        result = 31 * result + (point != null ? point.hashCode() : 0);
-        return result;
+        return vector != null ? vector.hashCode() : 0;
     }
 
     @Override
     public String toString() {
         return "Rover{" +
-                "direction=" + direction +
-                ", point=" + point +
+                "vector=" + vector +
                 '}';
     }
 }
