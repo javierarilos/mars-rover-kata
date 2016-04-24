@@ -11,9 +11,13 @@ public class Rover {
 
     public void receive(String sequence) {
         for (int i = 0; i < sequence.length(); i++) {
-            String command = sequence.substring(i, i + 1);
+            String command = parseCommand(sequence, i);
             execute(command);
         }
+    }
+
+    private String parseCommand(String sequence, int i) {
+        return sequence.substring(i, i + 1);
     }
 
     private void execute(String command) {
