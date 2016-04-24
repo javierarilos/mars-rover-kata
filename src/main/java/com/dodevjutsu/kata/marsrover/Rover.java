@@ -15,23 +15,23 @@ public class Rover {
     public void receive(String sequence) {
         // smell: switch statement
         if (sequence.equals("l")) {
-            if (this.getDirection() == 'N') {
+            if (this.getDirection().equals(Direction.facing('N'))) {
                 this.setDirection('W');
-            } else if (this.getDirection() == 'W') {
+            } else if (this.getDirection().equals(Direction.facing('W'))) {
                 this.setDirection('S');
-            } else if (this.getDirection() == 'S') {
+            } else if (this.getDirection().equals(Direction.facing('S'))) {
                 this.setDirection('E');
-            } else if (this.getDirection() == 'E') {
+            } else if (this.getDirection().equals(Direction.facing('E'))) {
                 this.setDirection('N');
             }
         } else if (sequence.equals("r")) {
-            if (this.getDirection() == 'N') {
+            if (this.getDirection().equals(Direction.facing('N'))) {
                 this.setDirection('E');
-            } else if (this.getDirection() == 'W') {
+            } else if (this.getDirection().equals(Direction.facing('W'))) {
                 this.setDirection('N');
-            } else if (this.getDirection() == 'S') {
+            } else if (this.getDirection().equals(Direction.facing('S'))) {
                 this.setDirection('W');
-            } else if (this.getDirection() == 'E') {
+            } else if (this.getDirection().equals(Direction.facing('E'))) {
                 this.setDirection('S');
             }
         }
@@ -46,7 +46,7 @@ public class Rover {
 
         if (x != rover.x) return false;
         if (y != rover.y) return false;
-        return getDirection() == rover.getDirection();
+        return getDirection().equals(rover.getDirection());
 
     }
 
@@ -54,7 +54,7 @@ public class Rover {
     public int hashCode() {
         int result = x;
         result = 31 * result + y;
-        result = 31 * result + (int) getDirection();
+        result = 31 * result + (typedDirection != null ? typedDirection.hashCode() : 0);
         return result;
     }
 
@@ -67,8 +67,8 @@ public class Rover {
                 '}';
     }
 
-    private char getDirection() {
-        return direction;
+    private Direction getDirection() {
+        return typedDirection;
     }
 
     private void setDirection(char direction) {
