@@ -10,7 +10,7 @@ public class Rover {
     public void receive(String sequence) {
         for (int i = 0; i < sequence.length(); i++) {
             String command = parseCommand(sequence, i);
-            execute(command);
+            executeCommand(command);
         }
     }
 
@@ -20,7 +20,7 @@ public class Rover {
         return value;
     }
 
-    private void execute(String command) {
+    private void executeCommand(String command) {
         if (command.equals("l")) {
             this.vector = vector.rotateLeft();
         } else if (command.equals("r")) {
