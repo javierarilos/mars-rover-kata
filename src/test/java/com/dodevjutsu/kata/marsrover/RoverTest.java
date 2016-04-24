@@ -167,6 +167,15 @@ public class RoverTest {
         assertEquals(landRoverFacing("E", -2, 2), rover);
     }
 
+    @Test
+    public void executeUnknownCommand() {
+        Rover rover = landRoverFacing("N", 0, 0);
+
+        rover.receive("*");
+
+        assertEquals(landRoverFacing("N", 0, 0), rover);
+    }
+
     private Rover getRoverFacing(String direction) {
         return landRoverFacing(direction, 0, 0);
     }
