@@ -12,8 +12,8 @@ public class Rover {
     }
 
     public void receive(String sequence) {
+        // smell: switch statement
         if (sequence.equals("l")) {
-            // smell: switch statement
             if (this.direction == 'N') {
                 this.direction = 'W';
             } else if (this.direction == 'W') {
@@ -22,6 +22,10 @@ public class Rover {
                 this.direction = 'E';
             } else if (this.direction == 'E') {
                 this.direction = 'N';
+            }
+        } else if (sequence.equals("r")) {
+            if (this.direction == 'N') {
+                this.direction = 'E';
             }
         }
     }
