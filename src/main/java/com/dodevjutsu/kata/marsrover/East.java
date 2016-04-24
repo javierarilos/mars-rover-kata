@@ -14,4 +14,9 @@ public class East extends Direction {
     public Point moveForward(Point point) {
         return point.incrementX(1);
     }
+
+    @Override
+    public Point moveBackwards(Point point) {
+        return point;
+    }
 }

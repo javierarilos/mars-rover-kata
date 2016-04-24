@@ -8,6 +8,8 @@ public abstract class Direction {
 
     public abstract Point moveForward(Point point);
 
+    public abstract Point moveBackwards(Point point);
+
     public static Direction facing(String representation) {
         if (representation.equals("N")) {
             return new North();
