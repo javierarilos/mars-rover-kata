@@ -3,7 +3,7 @@ package com.dodevjutsu.kata.marsrover;
 public class Rover {
     private final int x;
     private final int y;
-    private final char direction;
+    private char direction;
 
     public Rover(int x, int y, char direction) {
         this.x = x;
@@ -12,7 +12,9 @@ public class Rover {
     }
 
     public void receive(String sequence) {
-
+        if (sequence.equals("l")) {
+            this.direction = 'W';
+        }
     }
 
     @Override
