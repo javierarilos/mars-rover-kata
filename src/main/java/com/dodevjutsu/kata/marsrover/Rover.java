@@ -24,6 +24,10 @@ public class Rover {
             } else {
                 this.point = this.point.incrementX(1);
             }
+        } else if (sequence.equals("b")) {
+            if (this.direction.equals(Direction.facing("N"))) {
+                this.point = this.point.incrementY(-1);
+            }
         }
     }
 
