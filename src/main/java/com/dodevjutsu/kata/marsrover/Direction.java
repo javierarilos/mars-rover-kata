@@ -20,6 +20,10 @@ public class Direction {
         }
     }
 
+    public Direction rotateRight() {
+        return null;
+    }
+
     public static Direction facing(String representation) {
         return new Direction(representation);
     }
