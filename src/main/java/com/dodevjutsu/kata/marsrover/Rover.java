@@ -12,15 +12,19 @@ public class Rover {
     public void receive(String sequence) {
         for (int i = 0; i < sequence.length(); i++) {
             String command = sequence.substring(i, i + 1);
-            if (command.equals("l")) {
-                this.direction = direction.rotateLeft();
-            } else if (command.equals("r")) {
-                this.direction = direction.rotateRight();
-            } else if (command.equals("f")) {
-                this.point = this.direction.moveForward(this.point);
-            } else if (command.equals("b")) {
-                this.point = this.direction.moveBackwards(this.point);
-            }
+            execute(command);
+        }
+    }
+
+    private void execute(String command) {
+        if (command.equals("l")) {
+            this.direction = direction.rotateLeft();
+        } else if (command.equals("r")) {
+            this.direction = direction.rotateRight();
+        } else if (command.equals("f")) {
+            this.point = this.direction.moveForward(this.point);
+        } else if (command.equals("b")) {
+            this.point = this.direction.moveBackwards(this.point);
         }
     }
 
