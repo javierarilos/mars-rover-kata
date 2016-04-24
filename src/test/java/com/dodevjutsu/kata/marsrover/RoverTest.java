@@ -149,6 +149,15 @@ public class RoverTest {
         assertEquals(landRoverFacing("S", 0, 1), rover);
     }
 
+    @Test
+    public void moveBackwardsWhenFacingEast() {
+        Rover rover = landRoverFacing("E", 0, 0);
+
+        rover.receive("b");
+
+        assertEquals(landRoverFacing("E", -1, 0), rover);
+    }
+
     private Rover getRoverFacing(String direction) {
         return landRoverFacing(direction, 0, 0);
     }
