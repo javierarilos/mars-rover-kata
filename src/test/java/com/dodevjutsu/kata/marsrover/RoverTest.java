@@ -87,7 +87,7 @@ public class RoverTest {
     }
 
     @Test
-    public void moveForward() {
+    public void moveForwardWhenFacingNorth() {
         Rover rover = landRoverFacing("N", 0, 0);
 
         rover.receive("f");
