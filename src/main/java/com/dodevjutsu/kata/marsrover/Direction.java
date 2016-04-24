@@ -2,10 +2,7 @@ package com.dodevjutsu.kata.marsrover;
 
 public abstract class Direction {
 
-    private final String representation;
-
     protected Direction(String representation) {
-        this.representation = representation;
     }
 
     public abstract Direction rotateLeft();
@@ -29,21 +26,6 @@ public abstract class Direction {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Direction direction = (Direction) o;
-
-        return representation != null ? representation.equals(direction.representation) : direction.representation == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return representation != null ? representation.hashCode() : 0;
-    }
-
-    @Override
-    public String toString() {
-        return "Direction{" +
-                "representation=" + representation +
-                '}';
+        return true;
     }
 }
