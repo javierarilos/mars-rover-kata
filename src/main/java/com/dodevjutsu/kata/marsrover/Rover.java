@@ -15,7 +15,9 @@ public class Rover {
     }
 
     private String parseCommand(String sequence, int i) {
-        return sequence.substring(i, i + 1);
+        String value = sequence.substring(i, i + 1);
+        Command command = Command.create(value);
+        return value;
     }
 
     private void execute(String command) {
