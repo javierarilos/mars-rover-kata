@@ -11,8 +11,10 @@ public abstract class Command {
             return new RotateRight();
         } else if (value.equals("f")) {
             return new MoveForward();
-        } else {
+        } else if (value.equals("b")) {
             return new MoveBackwards();
         }
+
+        return new NullCommand();
     }
 }
