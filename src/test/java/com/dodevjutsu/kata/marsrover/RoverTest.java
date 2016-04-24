@@ -32,6 +32,15 @@ public class RoverTest {
         assertEquals(getRoverFacing('S'), rover);
     }
 
+    @Test
+    public void rotateLeftWhenFacingSouth() {
+        Rover rover = getRoverFacing('S');
+
+        rover.receive("l");
+
+        assertEquals(getRoverFacing('E'), rover);
+    }
+
     private Rover getRoverFacing(char direction) {
         return new Rover(0, 0, direction);
     }
