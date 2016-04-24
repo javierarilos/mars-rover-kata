@@ -14,7 +14,7 @@ public class Direction {
         } else if (representation.equals("W")) {
             throw new RuntimeException();
         } else if (representation.equals("S")) {
-            return Direction.facing("E");
+            throw new RuntimeException();
         } else  {
             return Direction.facing("N");
         }
@@ -26,7 +26,7 @@ public class Direction {
         } else if (representation.equals("W")) {
             throw new RuntimeException();
         } else if (representation.equals("S")) {
-            return Direction.facing("W");
+            throw new RuntimeException();
         } else {
             return Direction.facing("S");
         }
@@ -37,6 +37,8 @@ public class Direction {
             return new North();
         } else if (representation.equals("W")) {
             return new West();
+        } else if (representation.equals("S")) {
+            return new South();
         }
 
         return new Direction(representation);
