@@ -6,12 +6,10 @@ public class North extends Direction {
         super("N");
     }
 
-    @Override
     public Direction rotateRight() {
         return Direction.facing("E");
     }
 
-    @Override
     public Direction rotateLeft() {
         return Direction.facing("W");
     }

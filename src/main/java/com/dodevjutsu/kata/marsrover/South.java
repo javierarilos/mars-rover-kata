@@ -5,12 +5,10 @@ public class South extends Direction {
         super("S");
     }
 
-    @Override
     public Direction rotateRight() {
         return Direction.facing("W");
     }
 
-    @Override
     public Direction rotateLeft() {
         return Direction.facing("E");
     }

@@ -1,6 +1,6 @@
 package com.dodevjutsu.kata.marsrover;
 
-public class Direction {
+public abstract class Direction {
 
     private final String representation;
 
@@ -8,13 +8,9 @@ public class Direction {
         this.representation = representation;
     }
 
-    public Direction rotateLeft() {
-        throw new RuntimeException();
-    }
+    public abstract Direction rotateLeft();
 
-    public Direction rotateRight() {
-        throw new RuntimeException();
-    }
+    public abstract Direction rotateRight();
 
     public static Direction facing(String representation) {
         if (representation.equals("N")) {
