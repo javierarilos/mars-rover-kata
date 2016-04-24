@@ -10,18 +10,18 @@ public class Vector {
     }
 
     public Vector rotateLeft() {
-        return this;
+        return new Vector(point, direction.rotateLeft());
     }
 
     public Vector rotateRight() {
-        return this;
+        return new Vector(point, direction.rotateRight());
     }
 
     public Vector moveForward() {
-        return this;
+        return new Vector(direction.moveForward(point), direction);
     }
 
     public Vector moveBackwards() {
-        return this;
+        return new Vector(direction.moveBackwards(point), direction);
     }
 }
