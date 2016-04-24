@@ -11,12 +11,19 @@ public class Rover {
         for (int i = 0; i < sequence.length(); i++) {
             String command = parseCommand(sequence, i);
             executeCommand(command);
+
+            Command typedCommand = parse(sequence, i);
+            execute(typedCommand);
         }
+    }
+
+    private Command parse(String sequence, int i) {
+        String value = sequence.substring(i, i + 1);
+        return Command.create(value);
     }
 
     private String parseCommand(String sequence, int i) {
         String value = sequence.substring(i, i + 1);
-        Command command = Command.create(value);
         return value;
     }
 
@@ -30,6 +37,10 @@ public class Rover {
         } else if (command.equals("b")) {
             this.vector = vector.moveBackwards();
         }
+    }
+
+    private void execute(Command typedCommand) {
+        typedCommand.execute(this.vector);
     }
 
     @Override
