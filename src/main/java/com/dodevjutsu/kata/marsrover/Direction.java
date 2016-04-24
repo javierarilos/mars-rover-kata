@@ -8,6 +8,9 @@ public class Direction {
         this.representation = representation;
     }
 
+    public void rotateLeft() {
+    }
+
     public static Direction facing(char representation) {
         return new Direction(representation);
     }

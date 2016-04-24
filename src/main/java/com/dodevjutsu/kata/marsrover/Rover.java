@@ -14,6 +14,7 @@ public class Rover {
     public void receive(String sequence) {
         // smell: switch statement
         if (sequence.equals("l")) {
+            direction.rotateLeft();
             if (direction.equals(Direction.facing('N'))) {
                 this.direction = Direction.facing('W');
             } else if (direction.equals(Direction.facing('W'))) {
